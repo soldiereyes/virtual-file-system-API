@@ -35,4 +35,15 @@ public class DirectoryController {
         directoryRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Directory> updateDirectory(@PathVariable Long id, @RequestBody Directory updatedDirectory) {
+        return directoryRepository.findById(id)
+                .map(directory -> {
+                    directory.setName(updatedDirectory.getName());
+                    Directory savedDirectory = directoryRepository.save(directory);
+                    return ResponseEntity.ok(savedDirectory);
+                })
+                .orElse(ResponseEntity.notFound().build());
+    }
 }
