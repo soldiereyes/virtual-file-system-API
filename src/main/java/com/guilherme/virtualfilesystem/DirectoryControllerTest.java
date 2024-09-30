@@ -77,7 +77,6 @@
 //        mockMvc.perform(delete("/api/directories/" + directory.getId()))
 //                .andExpect(status().isNoContent());
 //
-//        // Verifique se o diretório foi removido
 //        boolean exists = directoryRepository.existsById(directory.getId());
 //        assertFalse(exists);
 //    }
