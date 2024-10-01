@@ -27,9 +27,7 @@ Antes de rodar o projeto, você precisará ter instalado:
 
 ### 1. Clonar o Repositório
 
-Clone este repositório em sua máquina local:
-
-git clone https://github.com/**seu-usuario**/virtual-file-system-API.git
+Clone este repositório em sua máquina local utilizando git clone 
 
 ### 2. Rodar o Projeto com Docker
 
@@ -41,12 +39,12 @@ Se preferir docker-compose up mysql e docker-compose up api para acompanhar os l
 
 ### 4. Verificar o Funcionamento
 
-Acesse a API pelo endpoint:
-http://localhost:8080/api/directories
+Acesse a API:
+**localhost:8080/api/directories**
 
 Utilize o método POST para testar uma requisição: Json de exemplo -  
   {
     "name": "Nirvana",
     "parent": null
-  },
+  }
 
