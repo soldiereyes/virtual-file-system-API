@@ -1,19 +1,32 @@
 version: '3.8'
 
 services:
-  app:
+  mysql:
+    image: mysql:5.7
+    container_name: virtual_file_system_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: virtual_file_system
+      MYSQL_USER: novo_usuario
+      MYSQL_PASSWORD: senha_forte
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+
+  api:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: virtual_file_system_api
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/virtual_file_system
+      SPRING_DATASOURCE_USERNAME: novo_usuario
+      SPRING_DATASOURCE_PASSWORD: senha_forte
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      - mysql
 
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_DATABASE: virtual_file_system
-      MYSQL_ROOT_PASSWORD: root
-    ports:
-      - "3306:3306"
+volumes:
+  db_data:
