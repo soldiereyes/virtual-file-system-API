@@ -37,7 +37,7 @@ docker-compose up --build
 
 Se preferir docker-compose up mysql e docker-compose up api para acompanhar os logs separadamente
 
-### 4. Verificar o Funcionamento
+### 3. Verificar o Funcionamento
 
 Acesse a API:
 **localhost:8080/api/directories**
