@@ -34,7 +34,7 @@ Clone este repositório em sua máquina local utilizando git clone
 Navegue até a pasta do projeto e utilize o Docker Compose para buidar e subir a aplicação e o banco de dados. Execute os seguintes comandos:
 **docker-compose up --build**  - para buildar o projeto, e 
 
-**docker-compose up mysql** 
+**docker-compose up mysql**  || 
 **docker-compose up api** 
  
  em terminais distintos para acompanhar os logs separadamente.
